@@ -1,13 +1,15 @@
 # Gas Calculator
 
-This is the solution of group assignment 4 of course "PROG8470 - Mobile Application Development - iOS" in Conestoga College.
+This is the solution of a group assignment.
+
+We want to show you how we collaborate on github, using pull requests.
 
 ## Team Members
 
-- Huajie (Jay) Jin
-- Ravali krishna velpuri
-- Tim Jo
-- Mengcheng Liu
+- [Huajie (Jay) Jin](https://github.com/huajiejin)
+- [Ravali krishna velpuri](https://github.com/ravalikrishna5121)
+- [Tim Jo](https://github.com/tim00vj)
+- [Mengcheng Liu](https://github.com/Liuguo320)
 
 ## Requirements
 
@@ -32,5 +34,3 @@ This is the solution of group assignment 4 of course "PROG8470 - Mobile Applicat
 > The navigation between screens must be facilitated using Navigation Controller as shown in Lecture 8. You must be able to pass data using segue and view appearance control functions learned previously. No buttons are allowed for navigation (only for adding and editing the data in the table)
 > 
 > The application must be able to save the data when going to background and subsequently retrieve the data on start. Save/Retrieve must be done through encode/decode. No other way will be accepted
-
-See [Assignment 4.pdf](Assignment%204.pdf)
