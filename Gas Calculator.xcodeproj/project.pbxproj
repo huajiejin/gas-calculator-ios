@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		3C2B5263291AF16C0093BE57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B5262291AF16C0093BE57 /* AppDelegate.swift */; };
 		3C2B5265291AF16C0093BE57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B5264291AF16C0093BE57 /* SceneDelegate.swift */; };
-		3C2B5267291AF16C0093BE57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B5266291AF16C0093BE57 /* ViewController.swift */; };
+		3C2B5267291AF16C0093BE57 /* TripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2B5266291AF16C0093BE57 /* TripTableViewController.swift */; };
 		3C2B526A291AF16C0093BE57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2B5268291AF16C0093BE57 /* Main.storyboard */; };
 		3C2B526C291AF16D0093BE57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2B526B291AF16D0093BE57 /* Assets.xcassets */; };
 		3C2B526F291AF16D0093BE57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2B526D291AF16D0093BE57 /* LaunchScreen.storyboard */; };
+		3CDA89FE291D9901006FFB49 /* TripFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDA89FD291D9901006FFB49 /* TripFormViewController.swift */; };
+		3CEB6638291B057200007EDA /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB6637291B057200007EDA /* Trip.swift */; };
+		3CEB663A291B067C00007EDA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB6639291B067C00007EDA /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C2B525F291AF16C0093BE57 /* Gas Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gas Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2B5262291AF16C0093BE57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C2B5264291AF16C0093BE57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3C2B5266291AF16C0093BE57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3C2B5266291AF16C0093BE57 /* TripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewController.swift; sourceTree = "<group>"; };
 		3C2B5269291AF16C0093BE57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C2B526B291AF16D0093BE57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C2B526E291AF16D0093BE57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C2B5270291AF16D0093BE57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CDA89FD291D9901006FFB49 /* TripFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFormViewController.swift; sourceTree = "<group>"; };
+		3CEB6637291B057200007EDA /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		3CEB6639291B067C00007EDA /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,10 @@
 			children = (
 				3C2B5262291AF16C0093BE57 /* AppDelegate.swift */,
 				3C2B5264291AF16C0093BE57 /* SceneDelegate.swift */,
-				3C2B5266291AF16C0093BE57 /* ViewController.swift */,
+				3C2B5266291AF16C0093BE57 /* TripTableViewController.swift */,
+				3CDA89FD291D9901006FFB49 /* TripFormViewController.swift */,
+				3CEB6637291B057200007EDA /* Trip.swift */,
+				3CEB6639291B067C00007EDA /* Utils.swift */,
 				3C2B5268291AF16C0093BE57 /* Main.storyboard */,
 				3C2B526B291AF16D0093BE57 /* Assets.xcassets */,
 				3C2B526D291AF16D0093BE57 /* LaunchScreen.storyboard */,
@@ -138,7 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C2B5267291AF16C0093BE57 /* ViewController.swift in Sources */,
+				3CEB663A291B067C00007EDA /* Utils.swift in Sources */,
+				3CDA89FE291D9901006FFB49 /* TripFormViewController.swift in Sources */,
+				3CEB6638291B057200007EDA /* Trip.swift in Sources */,
+				3C2B5267291AF16C0093BE57 /* TripTableViewController.swift in Sources */,
 				3C2B5263291AF16C0093BE57 /* AppDelegate.swift in Sources */,
 				3C2B5265291AF16C0093BE57 /* SceneDelegate.swift in Sources */,
 			);
