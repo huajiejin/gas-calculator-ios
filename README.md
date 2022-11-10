@@ -15,9 +15,7 @@ We want to show you how we collaborate on github, using pull requests.
 
 > The goal of the application will remain the same:
 > 
-> • For Group 1: you will enter legs of the trip with distance in miles and calculate total distance in kilometers
-> 
-> • For Group 2: you will enter legs of the trip with gas usage in gallons and calculate total use in liters
+> you will enter legs of the trip with gas usage in gallons and calculate total use in liters
 > 
 > The application must have two screens:
 >  
