@@ -13,16 +13,16 @@ class Trip {
     
     private var gasAmount: Measurement<UnitVolume>?
     
-    var gasAmountInLiters: Double = 0 {
+    var gasAmountInGallons: Double = 0 {
         didSet {
-            gasAmount = Measurement(value: gasAmountInLiters, unit: .liters)
+            gasAmount = Measurement(value: gasAmountInGallons, unit: .gallons)
         }
     }
     
-    var gasAmountInGallons: Double {
+    var gasAmountInLiters: Double {
         get {
             if let gasAmount = gasAmount {
-                return gasAmount.converted(to: .gallons).value
+                return gasAmount.converted(to: .liters).value
             } else {
                 return 0
             }

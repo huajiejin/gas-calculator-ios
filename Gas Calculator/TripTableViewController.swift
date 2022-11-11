@@ -22,18 +22,39 @@ class TripTableViewController: UIViewController {
     @objc func performSegueToTripForm(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "segueToTripForm", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "segueToTripForm":
+            let tripFormViewController = segue.destination as! TripFormViewController
+            if let row = tripTableView.indexPathForSelectedRow?.row {
+                tripFormViewController.trip = trips[row]
+            } else {
+                let trip = Trip(origin: "", destination: "")
+                tripFormViewController.trip = trip
+                trips.append(trip)
+            }
+        default:
+            preconditionFailure("Segue indentifier \(String(describing: segue.identifier)) does not exists")
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tripTableView.dataSource = self
         tripTableView.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tripTableView.reloadData()
+    }
 }
 
 extension TripTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // only create cells displayed on the screen by using dequeueReusableCell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "origin", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tripTableCell", for: indexPath)
         let trip = trips[indexPath.row]
         let gasAmountInGallonsText = Utils.numberFormatter.string(from: NSNumber(value: trip.gasAmountInGallons)) ?? ""
         cell.textLabel?.text = "\(trip.origin)  \(trip.destination)  \(gasAmountInGallonsText)"
