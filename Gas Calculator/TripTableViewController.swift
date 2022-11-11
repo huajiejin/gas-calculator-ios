@@ -11,7 +11,15 @@ class TripTableViewController: UIViewController {
     
     @IBOutlet weak var tripTableView: UITableView!
     
-    var trips: [Trip] = []
+    var tripStore = TripStore()
+    var trips: [Trip] {
+        set {
+            tripStore.trips = newValue
+        }
+        get {
+            return tripStore.trips
+        }
+    }
     
     required init?(coder aDcoder: NSCoder) {
         super.init(coder: aDcoder)

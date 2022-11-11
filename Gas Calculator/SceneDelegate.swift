@@ -8,7 +8,7 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    let tripStore = TripStore()
     var window: UIWindow?
 
 
@@ -17,6 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        let navController = window!.rootViewController as! UINavigationController
+        let tripTableViewController = navController.topViewController as! TripTableViewController
+        tripTableViewController.tripStore = tripStore
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -45,6 +48,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        let archiveSuccess = tripStore.archive()
+        print(archiveSuccess ? "archive success" : "archive failed")
     }
 
 
