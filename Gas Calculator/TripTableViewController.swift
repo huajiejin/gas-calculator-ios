@@ -55,12 +55,21 @@ class TripTableViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tripTableView.reloadData()
-        // TODO: Calculate total use in liters and display it somewhere
+        updateTitle()
+    }
+    
+    func updateTitle() {
+        var totalGasAmountInLiters: Double = 0
+        for trip in trips {
+            totalGasAmountInLiters = totalGasAmountInLiters + trip.gasAmountInLiters
+        }
+        navigationItem.title = "Trip Table (\(Utils.numberFormatter.string(from: NSNumber(value: totalGasAmountInLiters)) ?? "0")L)"
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         tripTableView.setEditing(editing, animated: animated)
+        updateTitle()
     }
 }
 
@@ -102,6 +111,7 @@ extension TripTableViewController: UITableViewDelegate {
             alert.addAction(UIAlertAction(title: deleteText, style: .destructive, handler: { action in
                 self.trips.remove(at: indexPath.row)
                 self.tripTableView.deleteRows(at: [indexPath], with: .automatic)
+                self.updateTitle()
             }))
             present(alert, animated: true)
         }
