@@ -47,6 +47,7 @@ class TripTableViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tripTableView.reloadData()
+        // TODO: Calculate total use in liters and display it somewhere
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {

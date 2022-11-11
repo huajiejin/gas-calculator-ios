@@ -34,4 +34,6 @@ class TripFormViewController: UIViewController {
         self.trip.destination = destinationTextField.text ?? ""
         self.trip.gasAmountInGallons = Double((gasAmountTextField.text ?? "").replacingOccurrences(of: NSLocale.current.decimalSeparator! as String, with: ".")) ?? 0
     }
+    
+    // TODO: Dissmis keyboard When user tap the screen
 }
