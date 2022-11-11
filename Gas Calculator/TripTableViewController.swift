@@ -41,21 +41,30 @@ class TripTableViewController: UIViewController {
         super.viewDidLoad()
         tripTableView.dataSource = self
         tripTableView.delegate = self
+        tripTableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tripTableView.reloadData()
     }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tripTableView.setEditing(editing, animated: animated)
+    }
 }
 
 extension TripTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // only create cells displayed on the screen by using dequeueReusableCell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tripTableCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath) as! TripCell
         let trip = trips[indexPath.row]
-        let gasAmountInGallonsText = Utils.numberFormatter.string(from: NSNumber(value: trip.gasAmountInGallons)) ?? ""
-        cell.textLabel?.text = "\(trip.origin)  \(trip.destination)  \(gasAmountInGallonsText)"
+        cell.originLabel.text = trip.origin
+        cell.destinationLabel.text = trip.destination
+        if let gasAmountInLitersText = Utils.numberFormatter.string(from: NSNumber(value: trip.gasAmountInLiters)){
+            cell.gasAmountLabel.text = "\(gasAmountInLitersText)(L)"
+        }
         return cell
     }
 

@@ -116,20 +116,53 @@
                                 <rect key="frame" x="0.0" y="119" width="393" height="733"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tripTableCell" id="0bL-hT-COp">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tripCell" id="0bL-hT-COp" customClass="TripCell" customModule="Gas_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="111.66666412353516"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0bL-hT-COp" id="w0N-UV-85R">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="111.66666412353516"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NKB-Cj-hvG">
-                                                    <rect key="frame" x="76" y="-43" width="240" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HVm-g7-sxs">
+                                                    <rect key="frame" x="16" y="0.0" width="361" height="111.66666666666667"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouc-NP-ETW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="111.66666666666667"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H2f-3u-0rA">
+                                                            <rect key="frame" x="353" y="0.0" width="0.0" height="111.33333333333333"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xh3-BK-Acq">
+                                                            <rect key="frame" x="361" y="0.0" width="0.0" height="111.33333333333333"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="OoT-zV-xzX"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HVm-g7-sxs" firstAttribute="leading" secondItem="w0N-UV-85R" secondAttribute="leading" constant="16" id="4O3-Y2-nSZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="HVm-g7-sxs" secondAttribute="bottom" id="cs9-o1-bc6"/>
+                                                <constraint firstAttribute="trailing" secondItem="HVm-g7-sxs" secondAttribute="trailing" constant="16" id="koZ-A6-TbP"/>
+                                                <constraint firstItem="HVm-g7-sxs" firstAttribute="top" secondItem="w0N-UV-85R" secondAttribute="top" id="uRD-qJ-To5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="destinationLabel" destination="H2f-3u-0rA" id="PMW-V9-XLY"/>
+                                            <outlet property="gasAmountLabel" destination="xh3-BK-Acq" id="uXo-BW-f1B"/>
+                                            <outlet property="originLabel" destination="ouc-NP-ETW" id="lQB-CW-1OR"/>
                                             <segue destination="Dca-sQ-0bP" kind="show" identifier="segueToTripForm" id="cNU-SC-la8"/>
                                         </connections>
                                     </tableViewCell>
