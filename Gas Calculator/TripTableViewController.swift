@@ -16,23 +16,21 @@ class TripTableViewController: UIViewController {
     required init?(coder aDcoder: NSCoder) {
         super.init(coder: aDcoder)
         navigationItem.leftBarButtonItem = editButtonItem
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.performSegueToTripForm(_:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.addTrip(_:)))
     }
     
-    @objc func performSegueToTripForm(_ sender: UIBarButtonItem) {
-        self.performSegue(withIdentifier: "segueToTripForm", sender: self)
+    @objc func addTrip(_ sender: UIBarButtonItem) {
+        let trip = Trip(origin: "", destination: "")
+        trips.append(trip)
+        tripTableView.insertRows(at: [IndexPath(row: trips.count - 1, section: 0)], with: .automatic)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "segueToTripForm":
-            let tripFormViewController = segue.destination as! TripFormViewController
             if let row = tripTableView.indexPathForSelectedRow?.row {
+                let tripFormViewController = segue.destination as! TripFormViewController
                 tripFormViewController.trip = trips[row]
-            } else {
-                let trip = Trip(origin: "", destination: "")
-                tripFormViewController.trip = trip
-                trips.append(trip)
             }
         default:
             preconditionFailure("Segue indentifier \(String(describing: segue.identifier)) does not exists")
