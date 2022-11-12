@@ -63,7 +63,7 @@ class TripTableViewController: UIViewController {
         for trip in trips {
             totalGasAmountInLiters = totalGasAmountInLiters + trip.gasAmountInLiters
         }
-        navigationItem.title = "Trip Table (\(Utils.numberFormatter.string(from: NSNumber(value: totalGasAmountInLiters)) ?? "0")L)"
+        navigationItem.title = "Total \(Utils.numberFormatter.string(from: NSNumber(value: totalGasAmountInLiters)) ?? "0")L"
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
